@@ -21,6 +21,14 @@ public class Main {
                     + meta.getDatabaseProductVersion());
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());
+        }finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    System.err.println("Exception: " + e.getMessage());
+                }
+            }
         }
         System.out.println();
         System.out.println("*******************");
@@ -40,6 +48,14 @@ public class Main {
 
         }catch (SQLException e){
             System.err.println("Exception: " + e.getMessage());
+        }finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    System.err.println("Exception: " + e.getMessage());
+                }
+            }
         }
     }
 }
